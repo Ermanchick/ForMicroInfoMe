@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ERMANCHICK</title>
+    <title>ERMANCHICK // PROFILE</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
@@ -14,104 +14,43 @@
     <div class="bg-gradient"></div>
 
     <header class="top-bar">
-      <div class="logo">ERM_SYS_v8.0</div>
+      <div class="logo">ERM_LIFE</div>
       <div class="clock" id="clock">00:00:00</div>
     </header>
 
     <main class="dashboard">
+      <!-- 1. Приветствие -->
       <section class="panel panel-hero tilt-card">
         <h1 class="glitch-name" data-text="ERMANCHICK">ERMANCHICK</h1>
-        <p class="subtitle">СТУДЕНТ // РАЗРАБОТЧИК</p>
+        <p class="subtitle">ESFP-T // ARTIST</p>
       </section>
 
-      <section class="panel panel-personality tilt-card">
-        <h3><span class="tag-icon type-psych">PSYCH</span> ЛИЧНОСТЬ</h3>
-        <div class="matrix-grid">
-          <div class="m-item">
-            <span class="m-label">ТИП МЫШЛЕНИЯ</span>
-            <span class="m-val">ТЕХНАРЬ-ЛОГИК</span>
-          </div>
-          <div class="m-item">
-            <span class="m-label">СОЦИАЛЬНОСТЬ</span>
-            <span class="m-val">АМБИВЕРТ</span>
-          </div>
-          <div class="m-item">
-            <span class="m-label">ОБЩЕНИЕ</span>
-            <span class="m-val">ТАКТИЛЬНЫЙ</span>
-          </div>
-          <div class="m-item">
-            <span class="m-label">РЕАКЦИЯ</span>
-            <span class="m-val">НЕ ОБИДЧИВЫЙ</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel panel-setup tilt-card">
-        <h3><span class="tag-icon type-hw">HW</span> МОЁ ЖЕЛЕЗО</h3>
-        <ul class="spec-list">
-          <li><span>CPU</span> <span>Ryzen 5 55600</span></li>
-          <li><span>GPU</span> <span>RTX 3060</span></li>
-          <li><span>RAM</span> <span>16 GB</span></li>
-          <li><span>OS</span> <span>WIN11 + LINUX</span></li>
-          <li><span>IDE</span> <span>VS CODE</span></li>
-        </ul>
-      </section>
-
-      <section class="panel panel-stack tilt-card">
-        <h3><span class="tag-icon type-code">CODE</span> ЯЗЫКИ</h3>
-        <div class="stack-list">
-          <div class="s-item main">C#</div>
-          <div class="s-item main">PYTHON</div>
-          <div class="s-item sec">C++</div>
-          <div class="s-item web">JS / WEB</div>
-        </div>
-      </section>
-
-      <section class="panel panel-physics tilt-card">
-        <h3><span class="tag-icon type-bio">BIO</span> АВАТАР</h3>
-        <div class="avatar-container">
+      <!-- 2. MBTI Статы -->
+      <section class="panel panel-mbti tilt-card">
+        <h3>
           <svg
+            class="icon"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
             <path
-              d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"
-              stroke="#5d3fd3"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"
             />
             <path
-              d="M3 21V18C3 16.9391 3.84139 16 5 16H19C20.1586 16 21 16.9391 21 18V21"
-              stroke="#5d3fd3"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"
             />
           </svg>
-          <div class="phys-stats">
-            <div>175 CM</div>
-            <div>69 KG</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel panel-motto tilt-card">
-        <h3><span class="tag-icon type-quote">QUOTE</span> КРЕДО</h3>
-        <p class="motto-text">
-          «У ВСЕХ СВОИ ТАРАКАНЫ»
-        </p>
-      </section>
-
-      <section class="panel panel-mbti tilt-card">
-        <h3><span class="tag-icon type-psych">MBTI</span> ESFP-T (АРТИСТ)</h3>
+          Личность (MBTI)
+        </h3>
 
         <div class="mbti-stats">
           <div class="stat-row">
             <div class="stat-info">
               <span class="stat-title">Экстраверсия</span>
-              <span class="stat-desc">Социальная энергия</span>
             </div>
             <div class="stat-bar-container">
               <div
@@ -121,11 +60,9 @@
               <span class="stat-value">53%</span>
             </div>
           </div>
-
           <div class="stat-row">
             <div class="stat-info">
               <span class="stat-title">Наблюдательность</span>
-              <span class="stat-desc">Фокус на деталях</span>
             </div>
             <div class="stat-bar-container">
               <div
@@ -135,11 +72,9 @@
               <span class="stat-value">65%</span>
             </div>
           </div>
-
           <div class="stat-row">
             <div class="stat-info">
               <span class="stat-title">Эмоциональность</span>
-              <span class="stat-desc">Интуиция чувств</span>
             </div>
             <div class="stat-bar-container">
               <div
@@ -149,11 +84,9 @@
               <span class="stat-value">57%</span>
             </div>
           </div>
-
           <div class="stat-row">
             <div class="stat-info">
               <span class="stat-title">Гибкость</span>
-              <span class="stat-desc">Адаптивность</span>
             </div>
             <div class="stat-bar-container">
               <div
@@ -163,12 +96,8 @@
               <span class="stat-value">56%</span>
             </div>
           </div>
-
           <div class="stat-row">
-            <div class="stat-info">
-              <span class="stat-title">Непокой</span>
-              <span class="stat-desc">Динамика</span>
-            </div>
+            <div class="stat-info"><span class="stat-title">Непокой</span></div>
             <div class="stat-bar-container">
               <div
                 class="stat-bar"
@@ -178,6 +107,136 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- 3. Физика (С твоей картинкой) -->
+      <section class="panel panel-physique tilt-card">
+        <h3>
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          PHYSIQUE
+        </h3>
+
+        <div class="physique-container">
+          <!-- Твоя картинка -->
+          <img
+            src="https://svgsilh.com/svg_v2/155828.svg"
+            alt="Human Silhouette"
+            class="human-img"
+          />
+
+          <!-- Данные поверх картинки -->
+          <div class="physique-data">
+            <div class="data-item height">
+              <span class="label">HEIGHT</span>
+              <span class="value">175 CM</span>
+            </div>
+            <div class="data-item weight">
+              <span class="label">WEIGHT</span>
+              <span class="value">69 KG</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Предпочтения (Preferences) - ОБНОВЛЕНО -->
+      <section class="panel panel-preferences tilt-card">
+        <h3>
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+            />
+          </svg>
+          Предпочтения
+        </h3>
+        <div class="pref-grid">
+          <div class="pref-item">
+            <span class="pref-label">МУЗЫКА</span>
+            <span class="pref-val">МЕЛОМАН</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">ЕДА</span>
+            <span class="pref-val">ПОЧТИ ВСЕЯДНЫЙ</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">ВРЕМЯ СУТОК</span>
+            <span class="pref-val">ДЕНЬ</span>
+          </div>
+          <div class="pref-item">
+            <span class="pref-label">ПОГОДА</span>
+            <span class="pref-val">ТЕПЛАЯ</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Soft Skills (Как я общаюсь) -->
+      <section class="panel panel-skills tilt-card">
+        <h3>
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Общение
+        </h3>
+        <ul class="skill-list">
+          <li><span>[+]</span> ТАКТИЛЬНОСТЬ</li>
+          <li><span>[+]</span> НЕ ОБИДЧИВОСТЬ</li>
+          <li><span>[+]</span> АМБИВЕРТНОСТЬ</li>
+        </ul>
+      </section>
+
+      <!-- 6. Кредо - ОБНОВЛЕНО -->
+      <section class="panel panel-motto tilt-card">
+        <h3>
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+            />
+            <path
+              d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+            />
+          </svg>
+          Кредо
+        </h3>
+        <p class="motto-text">«У ВСЕХ СВОИ ТАРАКАНЫ»</p>
       </section>
     </main>
 
