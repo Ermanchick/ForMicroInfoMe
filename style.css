@@ -91,6 +91,7 @@ body {
   transform: translate(-2px, -2px);
 }
 
+/* --- Заголовки с иконками --- */
 h3 {
   font-size: 0.9rem;
   display: inline-flex;
@@ -102,178 +103,222 @@ h3 {
   color: var(--text-main);
 }
 
-.tag-icon {
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 4px 10px;
-  border: 2px solid #1a1a1a;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: white;
-  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-}
-
-.type-psych {
-  color: var(--accent-pink);
-  border-color: var(--accent-pink);
-}
-.type-hw {
-  color: var(--accent-blue);
-  border-color: var(--accent-blue);
-}
-.type-code {
-  color: var(--accent-green);
-  border-color: var(--accent-green);
-}
-.type-bio {
-  color: var(--accent-orange);
-  border-color: var(--accent-orange);
-}
-.type-quote {
+.icon {
+  width: 20px;
+  height: 20px;
   color: var(--accent-purple);
-  border-color: var(--accent-purple);
-}
-.type-music {
-  color: #a29bfe;
-  border-color: #a29bfe;
+  stroke-width: 2.5;
 }
 
+/* --- Hero & Glitch Fix --- */
 .panel-hero {
   grid-column: span 2;
   justify-content: center;
   min-height: 250px;
   background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%);
 }
+
 .glitch-name {
   font-size: 3.5rem;
   line-height: 1;
   font-weight: 900;
   letter-spacing: -2px;
   margin-bottom: 10px;
+  font-family: "JetBrains Mono", monospace;
+  white-space: nowrap;
 }
+
 .subtitle {
   font-family: "JetBrains Mono";
   color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-.panel-personality {
+/* --- MBTI Stats --- */
+.panel-mbti {
   grid-column: span 2;
 }
-.matrix-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  height: 100%;
-}
-.m-item {
-  border: 2px solid #eee;
-  padding: 15px;
+.mbti-stats {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: 8px;
-  transition: 0.2s;
+  gap: 12px;
 }
-.m-item:hover {
-  border-color: var(--accent-purple);
-  background: #fdfdfd;
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-.m-label {
-  font-size: 0.75rem;
-  color: #888;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  font-weight: 600;
+.stat-info {
+  flex: 1;
+  font-weight: 700;
+  font-size: 0.85rem;
 }
-.m-val {
-  font-weight: 800;
-  font-size: 1rem;
-  color: var(--text-main);
+.stat-bar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-bar {
+  height: 100%;
+  border-radius: 5px;
+}
+.stat-value {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #333;
 }
 
-.panel-setup,
-.panel-physics {
+/* --- NEW: Physique Block Styles (With Image & Outline) --- */
+.panel-physique {
   grid-column: span 1;
   grid-row: span 2;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-.spec-list {
-  list-style: none;
-}
-.spec-list li {
+
+.physique-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed #ccc;
-  padding: 12px 0;
-  font-size: 0.95rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Стилизация картинки: Делаем её черной с обводкой */
+.human-img {
+  height: 220px; /* Высота человечка */
+  width: auto;
+  object-fit: contain;
+
+  /* Фильтры: */
+  /* invert(1) - делает белый цвет черным */
+  /* drop-shadow - создает черную тень вокруг всех краев, имитируя обводку */
+  filter: invert(1) drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.8));
+
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.panel-physique:hover .human-img {
+  opacity: 1;
+  transform: scale(1.05);
+  /* При наведении делаем обводку чуть жирнее через тень */
+  filter: invert(1) drop-shadow(0px 0px 4px rgba(0, 0, 0, 1));
+}
+
+.physique-data {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.data-item {
+  position: absolute;
   font-family: "JetBrains Mono";
-}
-.spec-list li:last-child {
-  border-bottom: none;
-}
-.spec-list li span:last-child {
   font-weight: 700;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.data-item.height {
+  top: 5%; /* Рядом с головой */
+  left: 5%;
+  color: var(--accent-purple);
+}
+
+.data-item.weight {
+  bottom: 30%; /* Рядом с поясом */
+  right: 5%;
   color: var(--accent-blue);
 }
 
-.avatar-container {
+.data-item .label {
+  display: block;
+  font-size: 0.6rem;
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+.data-item .value {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.panel-physique:hover .data-item {
+  transform: scale(1.1);
+}
+
+/* --- Preferences Grid --- */
+.panel-preferences {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.pref-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.pref-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  gap: 15px;
+  padding: 10px;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 6px;
 }
-.avatar-container svg {
-  width: 80px;
-  height: 80px;
-  filter: drop-shadow(0 4px 6px rgba(108, 92, 231, 0.2));
+.pref-label {
+  font-size: 0.7rem;
+  color: #888;
+  margin-bottom: 4px;
+  text-transform: uppercase;
 }
-.phys-stats div {
-  background: #f0f0f0;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-top: 5px;
-  font-family: "JetBrains Mono";
-  font-weight: 700;
+.pref-val {
   font-size: 0.9rem;
-  border: 1px solid #ddd;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
-.panel-stack {
+/* --- Soft Skills --- */
+.panel-skills {
   grid-column: span 2;
 }
-.stack-list {
+.skill-list {
+  list-style: none;
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 10px;
 }
-.s-item {
-  border: 2px solid #1a1a1a;
-  padding: 10px 20px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  cursor: default;
-  transition: 0.2s;
-}
-.s-item:hover {
-  transform: translateY(-2px);
-}
-.s-item.main {
-  background: var(--accent-purple);
-  color: white;
-  border-color: var(--accent-purple);
-}
-.s-item.sec {
-  background: #333;
-  color: white;
-  border-color: #333;
-}
-.s-item.web {
+.skill-list li {
+  padding: 8px 15px;
   background: white;
+  border: 2px solid #1a1a1a;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: "JetBrains Mono";
+}
+.skill-list li span {
+  color: var(--accent-purple);
+  margin-right: 5px;
 }
 
+/* --- Motto --- */
 .panel-motto {
   grid-column: span 2;
   justify-content: center;
@@ -288,69 +333,18 @@ h3 {
   color: #333;
 }
 
-.panel-mbti {
-  grid-column: span 2;
-}
-.mbti-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.stat-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.stat-info {
-  flex: 1;
-}
-.stat-title {
-  display: block;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-.stat-desc {
-  font-size: 0.75rem;
-  color: #888;
-}
-.stat-bar-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #eee;
-  height: 12px;
-  border-radius: 6px;
-  position: relative;
-  overflow: hidden;
-}
-.stat-bar {
-  height: 100%;
-  border-radius: 6px;
-}
-.stat-value {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #333;
-}
-
 @media (max-width: 1024px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
   }
   .panel-hero,
-  .panel-personality,
-  .panel-stack,
-  .panel-motto,
-  .panel-mbti {
+  .panel-mbti,
+  .panel-skills,
+  .panel-motto {
     grid-column: span 2;
   }
-  .panel-setup,
-  .panel-physics {
+  .panel-physique,
+  .panel-preferences {
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -367,9 +361,6 @@ h3 {
     grid-row: auto !important;
   }
   .glitch-name {
-    font-size: 2.5rem;
-  }
-  .matrix-grid {
-    grid-template-columns: 1fr;
+    font-size: 2.2rem;
   }
 }
